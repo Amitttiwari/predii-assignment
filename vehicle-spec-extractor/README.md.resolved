@@ -1,0 +1,33 @@
+# Vehicle Specification Extraction System
+
+A RAG-based system to extract structured vehicle specifications from service manual PDFs using a Streamlit UI.
+
+## Features
+- **PDF Parsing**: Extracts text from service manuals while preserving structure.
+- **RAG Pipeline**: Chunking, Embedding, and Retrieval using FAISS.
+- **LLM Extraction**: Structured JSON extraction of vehicle specs (Torque, Fluids, Clearances, etc.).
+- **Interactive UI**: Streamlit-based interface for uploading manuals and querying specs.
+
+## Setup
+
+1.  **Clone the repository** (or navigate to `vehicle-spec-extractor/`)
+2.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Set up Environment Variables**:
+    Create a `.env` file in the root directory:
+    ```
+    OPENAI_API_KEY=your_openai_api_key_here
+    # Optional: HUGGINGFACEHUB_API_TOKEN if using HF inference API
+    ```
+4.  **Run the Streamlit App**:
+    ```bash
+    streamlit run app.py
+    ```
+
+## Usage
+1.  Upload a Service Manual PDF via the sidebar.
+2.  Click "Build Knowledge Base" to process the PDF.
+3.  Enter a query (e.g., "Torque for cylinder head bolts") or use the sample buttons.
+4.  View extracted specifications in JSON or Table format.
